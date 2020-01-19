@@ -1,0 +1,10 @@
+I have used Git, Github and Markdown in the past. Tools I really like to use.
+However Github pages is new to me and most say amazing tool that github provides to us.
+I have created and is currently working on a website. I hope that I can continue to work on it
+in this course. I am using tools like React-JS and redux to develop it.
+I have been hobby creating website last 10 years, never created somethine serious since in the past
+I have not really been structured. However after 3 years at this school I have started to developt the
+most serious project so far. Where everything is up and running on gitlab.
+Today I learned:
+Git tag and what it can be used for.
+That git pages existed and that you can host website through git for free.
