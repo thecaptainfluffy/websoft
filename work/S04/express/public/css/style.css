@@ -1,0 +1,28 @@
+/*
+ * Comments are written as C++ style. 
+ */
+html {
+    overflow-y: scroll;
+}
+
+body {
+    margin: 8px auto;
+    background: #fff;
+    width: 700px;
+}
+
+nav {
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: x-large;
+    font-weight: bold;
+    color: rgb(0, 12, 180);
+}
+
+nav a:hover {
+    color: rgb(54, 131, 218);
+}
