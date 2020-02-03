@@ -13,12 +13,10 @@ const app = express();
 const path    = require("path");
 const newPath = path.join(__dirname, "report");
 
+app.set("view engine", "ejs");
 app.use(middleware.logIncomingToConsole);
 app.use(express.static(newPath));
 app.use("/", routeIndex);
-app.set("view engine", "ejs");
-const routeToday = require("./route/today.js");
-app.use("/today", routeToday);
 app.listen(port, logStartUpDetailsToConsole);
 
 // This is middleware called for all routes.

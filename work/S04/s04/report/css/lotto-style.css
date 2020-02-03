@@ -1,0 +1,16 @@
+#table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
+tr td {
+    outline: black solid 2px;
+    padding: 0.4em;
+}
+tr td:hover {
+    font-weight: bold;
+}
+
+tr th {
+    font-size: 20px;
+}

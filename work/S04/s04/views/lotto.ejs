@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Presentation of my self in the course DA377B</title>
+    <link rel="stylesheet" href="css/lotto-style.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+<h2>Number of correct answers: <%=nrCorAns %></h2>
+<table>
+    <tr>
+        <% for (var i = 0; i <= numbers.length; i++) { %>
+            <% if (i === 0) { %>
+                <td id="rowText">Your row:</td>
+            <% } else { %>
+                <td id=<%=("row" + i)%>> <%=i %> </td>
+        <% }} %>
+    </tr>
+    <tr>
+        <% for (var i = 0; i <= numbers.length; i++) { %>
+            <% if (i === 0) { %>
+                <td id="resultText">Correct result:</td>
+            <% } else { %>
+            <td id=<%=("result" + i)%>> <%=i %> </td>
+        <% }} %>
+    </tr>
+</table>
+<%= result %>
+<script>
+    var lottoRow = <%- JSON.stringify(row) %>
+    var lottoResult = <%- JSON.stringify(result) %>
+
+    for (var i = 0; i < lottoRow.length; i++) {
+        var rowStyle = document.getElementById("row" + lottoRow[i])
+        rowStyle.style.fontWeight = "bolder"
+        rowStyle.style.color = "white"
+        rowStyle.style.backgroundColor = "black"
+    }
+    for (var i = 0; i < lottoResult.length; i++) {
+        var resultStyle = document.getElementById("result" + lottoResult[i])
+        resultStyle.style.fontWeight = "bolder"
+        resultStyle.style.color = "white"
+        resultStyle.style.backgroundColor = "black"
+    }
+</script>
+</body>
+</html>

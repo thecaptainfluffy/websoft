@@ -11,7 +11,7 @@
     /**
      * Set the attributes for the duck
      **/
-    car.src='img/me.jpg';
+    car.src='img/car.png';
     car.id = "car";
     car.style.position ='absolute';
     car.style.width = "100px";

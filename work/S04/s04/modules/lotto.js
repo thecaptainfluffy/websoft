@@ -31,11 +31,16 @@ for (let i=0; i<7; i++) {
 
 // Join the elements and print out as a string.
 // This construct is using the builtin class method toString.
-console.info(numbers.join());
 function getNumbers() {
     return numbers.join();
 }
 
+function correctLotto(input, result) {
+    var found = input.filter(val => result.includes(val))
+    return found.length
+}
+
 module.exports = {
-    "getNumbers": getNumbers
+    "getNumbers": getNumbers,
+    "correctLotto": correctLotto
 };

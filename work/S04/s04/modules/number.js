@@ -18,7 +18,7 @@ class Number {
      *
      * @returns {integer} The value of the rolled dice min=1 and max=faces.
      */
-    roll(max=35) {
+    roll(max=34) {
         this.number = Math.floor(Math.random() * max + 1);
         return this.number;
     }

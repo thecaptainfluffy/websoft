@@ -1,0 +1,7 @@
+#flag {
+  background: white;
+  outline: black solid 1px;
+}
+#flag:before, #flag:after {
+    background: blue;
+  }
