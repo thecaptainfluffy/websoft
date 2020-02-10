@@ -5,6 +5,7 @@
             <a href="about.php">About</a> |
             <a href="schools.html">Schools</a> |
             <a href="flag.html">Flag</a> |
-            <a href="search.php">Search</a>
+            <a href="search.php">Search</a> |
+            <a href="read.php">Read</a>
         </nav>
 </header>

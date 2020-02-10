@@ -1,7 +1,5 @@
 <?php
-/**
- * A page controller
- */
+require "db/database.php";
 
 // Get incoming values
 $search = $_GET["search"] ?? null;
@@ -13,19 +11,14 @@ $servername = "localhost";
 $username = "test";
 $password = "abcd1234";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = connect($servername, $username, $password);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 $sql = "SELECT * FROM websoft.characters WHERE id LIKE ? OR first_name LIKE ? OR last_name LIKE ? OR race LIKE ? OR class LIKE ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("sssss", $search, $search, $search, $search, $search);
-$stmt->execute();
-$result = $stmt->get_result();
-$conn->close();
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssss", $search, $search, $search, $search, $search);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
 }
 ?>
 
