@@ -15,11 +15,12 @@ router.get("/lotto", (req, res) => {
         for (var i = 0; i < 35; i++) 
         numbers.push(i+1);
 
+        lotto.generateNumbers();
     if(req.param("row") != null) {
-        var row = req.param("row").split(",");
+        var row = req.param("row").split(",").slice(0, 7);
         var result = lotto.getNumbers().split(",");
         var nrCorAns = lotto.correctLotto(row, result);
-
+        
         data.numbers = numbers;
         data.nrCorAns = nrCorAns;
         data.row = row;

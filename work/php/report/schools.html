@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Fetching schools like a pro</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="favicon.ico">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="me.php">Me</a> |
+                <a href="report.php">Report</a> | 
+                <a href="about.php">About</a> |
+                <a href="schools.html">Schools</a> |
+                <a href="flag.html">Flag</a> |
+                <a href="search.php">Search</a>
+            </nav>
+        </header>   
+        <select id="selectSchool" style="margin-top: 2em;" onchange="selectSchool(this.value)">
+            <option value="1080">1080</option>
+            <option value="1081">1081</option>
+            <option value="1082">1082</option>
+            <option value="1083">1083</option>
+          </select style="margin-top: 2em;">
+        <button onclick="fetchData()">
+            Fetch data!
+        </button>
+        <table id="table" />
+        <script>
+            var dataValue = 1080;
+            function selectSchool (value) {
+                dataValue = value;
+            }
+            function fetchData() {
+                fetch('data/' + dataValue + '.json')
+                .then((response) => {
+                    return response.json()
+                })
+                .then((myJson) => {
+                    let schools = myJson.Skolenheter
+                    var table = document.getElementById("table")
+                    var tBody = document.createElement('tBody')
+                    var tr = document.createElement("tr")
+                    for (var i = 0; i < Object.keys(schools[0]).length; i++) {
+                        var th = document.createElement("th")
+                        th.appendChild(document.createTextNode(Object.keys(schools[0])[i]))
+                        tr.appendChild(th)
+                    }
+                    tBody.appendChild(tr)
+                    
+                    for (var i = 0; i < schools.length; i++) {
+                        var tr = document.createElement('tr')
+                        for (var cell in schools[i]) {
+                            var td = document.createElement('td')
+                            td.appendChild(document.createTextNode(schools[i][cell]))
+                            tr.appendChild(td)
+                        }
+                        tBody.appendChild(tr)
+                    }
+                    table.innerHTML = ""
+                    table.appendChild(tBody)
+                    
+                });
+            }
+        </script>
+        <script src="js/car.js"></script>
+        <?php include "view/footer.php" ?>
+    </body>
+</html>

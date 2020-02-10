@@ -51,6 +51,7 @@ function appendHeader() {
 }
 //Append to body
 function appendBody() {
+
     body.append(aSweden);
     body.append(" | ");
     body.append(aDenmark);

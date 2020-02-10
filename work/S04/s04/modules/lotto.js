@@ -11,21 +11,12 @@ let Number = require("./number.js");
 let numbers = [];
 
 // Add the dices to the dice hand and roll them once
-var sameNumber = false;
-var compareNr;
-for (let i=0; i<7; i++) {
-    numbers[i] = new Number();
-    do {
-        sameNumber = false;
-        numbers[i] = numbers[i].roll();
-        for(let j=0; j<numbers.length-1; j++) {
-            if(compareNr == numbers[j]) {
-                sameNumber = true;
-            }
-        }
-    } while (sameNumber); 
+function generateNumbers() {
+    for (let i=0; i<7; i++) {
+        numbers[i] = new Number().roll();
+    }
 }
-
+generateNumbers();
 // Print out the whole datastructure
 //console.info(numbers);
 
@@ -42,5 +33,6 @@ function correctLotto(input, result) {
 
 module.exports = {
     "getNumbers": getNumbers,
-    "correctLotto": correctLotto
+    "correctLotto": correctLotto,
+    "generateNumbers": generateNumbers
 };

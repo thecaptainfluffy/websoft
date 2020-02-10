@@ -8,16 +8,7 @@
 </head>
 
 <body>
-
-<header>
-    <nav>
-        <a href="me.html">Me</a> |
-        <a href="report.html">Report</a> | 
-        <a href="about.html">About</a> |
-        <a href="schools.html">Schools</a> |
-        <a href="flag.html">Flag</a>
-    </nav>
-</header>
+<?php include 'view/header.php'; ?> 
 
 <article>
 
@@ -48,7 +39,7 @@
 
 <section>
 <h2>S03</h2>
-<p>I have worked with JS client side summer 2019. I developed a concert advertising website with the javascript framework ReactJS. Javascript feels like a mix between HTML and Java, and if the system is not compiled. Since javascript is script based which makes it so you can manipulate the code. I aim to reach for grade 5. It was fun to make a car that you can drive. It's also interesting with the power from transition css in code and how good it looks. That you can manipulate even CSS and the looks live.</p>
+<p>Here is the text for this section.</p>
 </section>
 
 <section>
@@ -86,12 +77,9 @@
 <p>Here is the text for this section.</p>
 </section>
 
-<footer>
-    <a href="https://www.linkedin.com/in/simon-westerdahl-cs/"><img height="100" width="200" src="https://cdn.worldvectorlogo.com/logos/linkedin.svg" alt="Linked In"></a>
-    <a href="https://github.com/thecaptainfluffy"><img height="100" width="200" src="https://upload.wikimedia.org/wikipedia/commons/5/54/GitHub_Logo.png" alt="Github"></a>
-</footer>
-
 </article>
+
+<?php include "view/footer.php" ?>
 
 <script src="js/car.js"></script> 
 </body>
