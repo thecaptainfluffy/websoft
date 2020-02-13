@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    var accounts = (webapp.Models.Account[])ViewData["Accounts"];
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">FUCK YEAH</a>.</p>
+</div>
+
+<table>
+    <tr>
+        <th>Number</th>
+        <th>Balance</th>
+        <th>Label</th>
+        <th>Owner</th>
+    </tr>
+    @foreach(var account in accounts) {
+    <tr>
+        <td>@account.Number</td>
+        <td>@account.Balance</td>
+        <td>@account.Label</td>
+        <td>@account.Owner</td>
+    </tr>
+    }
+</table>
