@@ -11,13 +11,11 @@ using System.Text.Json.Serialization;
 
 namespace webapp.Controllers 
 {
-    [Route("/")]
-    public class IndexController : Controller
+    [Route("About")]
+    public class AboutController : Controller
     {
-        public IActionResult index() 
+        public IActionResult About() 
         {
-            JsonFileAccountService jfas = new JsonFileAccountService();
-            ViewData["Accounts"] = jfas.GetAccounts();
             return View();
         }
     }

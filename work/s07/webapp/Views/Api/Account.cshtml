@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "About";
+    var account = (webapp.Models.Account)ViewData["Account"];
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Welcome to about page. In this exercise we work with .NET and create application both for console and web.</p>
+<h4>@ViewData["Error"]</h2>
+<form asp-controller="Api" asp-action="Post" method="post">
+    <input type="text" id="number" name="number" value=@account.Number>
+    <input type="text" id="balance" name="balance" value=@account.Balance readonly>
+    <input type="text" id="label" name="label" value=@account.Label readonly>
+    <input type="text" id="owner" name="owner" value=@account.Owner readonly>
+    <input type="submit" value="Submit">
+</form>
+  
