@@ -40,7 +40,7 @@ if ($update) {
 
 ?>
 <form method="post">
-    <input type="text" name="id" placeholder="Enter ID you want to delete">
+    <input type="text" name="id" placeholder="Enter ID you want to update">
     <input type="submit" name="update" value="Update">
 </form>
 
