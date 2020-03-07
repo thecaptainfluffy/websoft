@@ -31,8 +31,8 @@ namespace webapp.Controllers
                 return Ok(account);
             }
             return Ok("{\"error\": Account " + number + " does not exist}");
-        }           
-        [HttpGet]
+        }
+        [Route("account")]
         public IActionResult Account() 
         {
             JsonFileAccountService jfas = new JsonFileAccountService();
@@ -54,6 +54,6 @@ namespace webapp.Controllers
                 }
             }      
             return View("Account");
-        }
+        }                   
     }
 }

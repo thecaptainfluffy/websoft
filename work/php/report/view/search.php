@@ -15,7 +15,7 @@ $conn = connect($servername, $username, $password);
 
 $sql = "SELECT * FROM websoft.characters WHERE id LIKE ? OR first_name LIKE ? OR last_name LIKE ? OR race LIKE ? OR class LIKE ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssss", $search, $search, $search, $search, $search);
+        $stmt->bind_param("sssss", $like, $like, $like, $like, $like);
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();

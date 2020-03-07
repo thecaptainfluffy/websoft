@@ -9,9 +9,9 @@ namespace app
     class Program
     {
         static void Main(string[] args)
-        {
-               string option = "";
-               string FormatAccountsHeader = String.Format("{0, 10} {1, 10} {2,10} {3, 10}", "Number", "Balance", "Label", "Owner");
+        {       
+            string option = "";
+            string FormatAccountsHeader = String.Format("{0, 10} {1, 10} {2,10} {3, 10}", "Number", "Balance", "Label", "Owner");
             do {
                 var accounts = ReadAccounts();
                 Console.WriteLine("-------Menu-------");
@@ -35,15 +35,15 @@ namespace app
                     break;
 
                     case "2":
-                    Console.WriteLine("Insert number");
-                    int nr = -1;
+                    var nr = 0;
                     do {
+                        Console.WriteLine("Insert number");
                         string input = Console.ReadLine();
                         nr = Int32.Parse(input);
-                    } while (0 > nr && nr > accounts.Count());
+                    } while (0 > nr || nr >= accounts.Count());
                     Console.WriteLine(FormatAccountsHeader);
                     Console.WriteLine("_____________________________________________"); 
-                    string FormatAccount = String.Format("{0, 10} {1, 10} {2, 10} {3, 10}", accounts.ElementAt(nr).Number, accounts.ElementAt(nr).Balance, accounts.ElementAt(nr).Label, accounts.ElementAt(nr).Owner);
+                    string FormatAccount = String.Format("{0, 10} {0, 10} {0, 10} {0, 10}", accounts.ElementAt(nr).Number, accounts.ElementAt(nr).Balance, accounts.ElementAt(nr).Label, accounts.ElementAt(nr).Owner);
                     Console.WriteLine(FormatAccount);
                     break;
 
