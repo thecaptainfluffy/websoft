@@ -41,18 +41,34 @@ namespace webapp.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Post([Bind("Number, Balance, Label, Owner")] Account account) 
-        {
-            ViewData["Error"] = "Incorrect account number";      
-            ViewData["Account"] = account;
+        public IActionResult Post(int fNumber, int tNumber, int money) 
+        {     
             JsonFileAccountService jfas = new JsonFileAccountService();
             var accounts = jfas.GetAccounts();
+            int i = 0;
+            int iFrom = -1;
+            int iTo = -1;
             foreach(var acc in accounts) {
-                if(account.Number == acc.Number) {
-                    ViewData["Account"] = acc;
-                    ViewData["Error"] = "";  
+                if(acc.Number == fNumber) {
+                    iFrom = i;
                 }
-            }      
+                if(acc.Number == tNumber) {
+                    iTo = i;
+                }
+                i++;
+            }
+            if(iFrom != -1 && iTo != -1) {
+                if(accounts.ElementAt(iFrom).Balance < money) {
+                    ViewData["Error"] = "This account doesn't have that much money";
+                    return View("Account");
+                }
+
+            accounts.ElementAt(iFrom).Balance = (accounts.ElementAt(iFrom).Balance - money);
+            accounts.ElementAt(iTo).Balance = (accounts.ElementAt(iTo).Balance + money); 
+            System.IO.File.WriteAllText("data/account.json", JsonSerializer.Serialize(accounts));
+            } else {
+                ViewData["Error"] = "Incorrect number for either from or to acc";
+            }
             return View("Account");
         }                   
     }
