@@ -185,7 +185,29 @@ An important metric in the performance section is Time to Interactive. Wikipedia
 
 <section>
 <h2>S10</h2>
-<p>Here is the text for this section.</p>
+<p>We first talked together as a group and divided who should do frontend work and who should do backend work. We then talked about the front stack and back stack.
+    As a front stack we decided to go with React and with it's techniques like Context and Router. We considered using Redux, portals, fragments but decided it was not necessary.
+    React is built up in a very similar way like a tree. I will use tree references and how it's built up to get a better understanding of React framework. 
+    The roots in React tree is redux or context. Context is a technique to get global variables to multiple components without the need to pass the data between components.
+    Redux is very much like Context, except Context should be used for global values that doesn't affect the compoents but is just information. 
+    While Redux could affect other components. For a large project I would argue it's necessary to seperate these two but for a small project like this we decided Context was enough.
+    The tree is React framework and the index.js file where everything is built and set up from. Router decide which path is necessar to access which branch.
+    Branches is the pages wich adds values to the website. Inside a page more pages could exist, they can be built up as fragments. Fragments is a technique to build
+    a smaller parts inside a larger page. However all these page and fragment is built up from components which is similar to the leafs.
+    While the pages/fragments/branches decides where all the components/leafs should be, it's the components that put value to the website.
+    Component could handle sign up and handle taking in or produce data dynamically.
+    To send data from redux or context to one of the components it's best practice to do it from the index.js file and then pass it down from page > fragment > component.
+    Difference between Redux and Context is that context is not visible in the code when it's passing data while Redux you have to send it between each branch since
+    it could affect the branch if a state is changing.
+    Portals is where the tree reference breaks. A portal can pass data from one leaf to another and ignoring the branches. This speeds up the passing of data if you have a very
+    large tree.
+    The back end was built up with the techniuqe AMP, which is Apache, MySQL and PHP... Fredirk talk more about this:
+    I would say the project was a perfect size for two people like me and Fredrik. Fredrik is excellent when it comes backend work and I have built with react before and
+    learned form my experiences. We could have just done enough and be done a lot faster but it has given us to go more indepth and use fun techniques that React has to offer
+    and use them. Hardest part was how to make my own right click menu component and apply it inside another component. I will solve it in my own time, but for this project
+    I decided it was not worth attempt to make. I think making a project with documentation is an excellent way to grade our competence in web development. I would like to 
+    see a larger 
+</p>
 </section>
 
 <footer>
